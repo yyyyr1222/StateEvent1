@@ -12,9 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// เพิ่มฟอนต์ใหม่ที่ Claude ออกแบบมาสำหรับหน้า Likes
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["500", "600"] });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" }); // แก้ไขจุดที่ประกาศ variable ซ้ำ
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Student Course Hub",

@@ -1,24 +1,23 @@
 import Image from "next/image";
-import type { Member } from "@/types/band";
-
+// สมมติว่ารับ props member มาใช้งาน
 type MemberCardProps = {
-  member: Member;
+  member: {
+    name: string;
+    imageUrl?: string;
+    role?: string;
+  };
 };
 
 export default function MemberCard({ member }: MemberCardProps) {
   return (
-    <li className="member-card">
-      <Image
-        src={member.imageUrl}
-        alt={"รูปของ " + member.name}
-        width={120}
-        height={120}
-        className="member-photo"
+    <div className="member-card">
+      <Image 
+        src={member.imageUrl || "/images/default-avatar.png"} 
+        alt={member.name} 
+        width={100} 
+        height={100} 
       />
-      <div className="member-info">
-        <p className="member-name">{member.name}</p>
-        <p className="member-role">{member.role}</p>
-      </div>
-    </li>
+      <p>{member.name}</p>
+    </div>
   );
 }
